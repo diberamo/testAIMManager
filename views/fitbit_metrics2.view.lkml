@@ -66,6 +66,7 @@ view: fitbit_metrics2 {
   dimension: distance {
     type: number
     sql: ${TABLE}.distance ;;
+    value_format: "$#.00;($#.00)"
   }
 
   dimension: distance_ds2 {

@@ -29,12 +29,12 @@ view: fitbit_metrics2 {
   }
 
   dimension: age {
-    type: string
+    type: number
     sql: ${TABLE}.age ;;
   }
 
   dimension: calories {
-    type: string
+    type: number
     sql: ${TABLE}.calories ;;
   }
 
@@ -64,7 +64,7 @@ view: fitbit_metrics2 {
   }
 
   dimension: distance {
-    type: string
+    type: number
     sql: ${TABLE}.distance ;;
   }
 
@@ -94,7 +94,7 @@ view: fitbit_metrics2 {
   }
 
   dimension: height {
-    type: string
+    type: number
     sql: ${TABLE}.height ;;
   }
 
@@ -199,12 +199,12 @@ view: fitbit_metrics2 {
   }
 
   dimension: time_in_bed_ds2 {
-    type: string
+    type: number
     sql: ${TABLE}.Time_in_BedDS2 ;;
   }
 
   dimension: weight {
-    type: string
+    type: number
     sql: ${TABLE}.weight ;;
   }
 

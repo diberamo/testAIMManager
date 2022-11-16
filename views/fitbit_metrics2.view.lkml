@@ -99,7 +99,7 @@ view: fitbit_metrics2 {
   }
 
   dimension: id_number_persona {
-    type: string
+    type: number
     sql: ${TABLE}.id_number_persona ;;
   }
 

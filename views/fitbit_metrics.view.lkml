@@ -1,8 +1,8 @@
-# The name of this view in Looker is "Fitbit Metrics2"
-view: fitbit_metrics2 {
+# The name of this view in Looker is "Fitbit Metrics"
+view: fitbit_metrics {
   # The sql_table_name parameter indicates the underlying database table
   # to be used for all fields in this view.
-  sql_table_name: `testconnectfitbit.fitbitDS.fitbit_metrics2`
+  sql_table_name: `testconnectfitbit.fitbitDS.fitbit_metrics`
     ;;
   drill_fields: [id]
   # This primary key is the unique key for this table in the underlying database.
@@ -10,7 +10,7 @@ view: fitbit_metrics2 {
 
   dimension: id {
     primary_key: yes
-    type: string
+    type: number
     sql: ${TABLE}.id ;;
   }
 
@@ -24,7 +24,7 @@ view: fitbit_metrics2 {
   }
 
   dimension: activity_calories_ds2 {
-    type: string
+    type: number
     sql: ${TABLE}.Activity_CaloriesDS2 ;;
   }
 
@@ -39,12 +39,12 @@ view: fitbit_metrics2 {
   }
 
   dimension: calories_burned_ds2 {
-    type: string
-    sql: ${TABLE}.calories_burned_ds2 ;;
+    type: number
+    sql: ${TABLE}.Calories_BurnedDS2 ;;
   }
 
   dimension: corr_heart_steps {
-    type: string
+    type: number
     sql: ${TABLE}.corr_heart_steps ;;
   }
 
@@ -54,7 +54,7 @@ view: fitbit_metrics2 {
   }
 
   dimension: day_exer {
-    type: string
+    type: number
     sql: ${TABLE}.day_exer ;;
   }
 
@@ -66,31 +66,30 @@ view: fitbit_metrics2 {
   dimension: distance {
     type: number
     sql: ${TABLE}.distance ;;
-    value_format: "$#.00;($#.00)"
   }
 
   dimension: distance_ds2 {
-    type: string
+    type: number
     sql: ${TABLE}.DistanceDS2 ;;
   }
 
   dimension: entropy_heart {
-    type: string
+    type: number
     sql: ${TABLE}.entropy_heart ;;
   }
 
   dimension: entropy_setps {
-    type: string
+    type: number
     sql: ${TABLE}.entropy_setps ;;
   }
 
   dimension: gender {
-    type: string
+    type: number
     sql: ${TABLE}.gender ;;
   }
 
   dimension: hear_rate {
-    type: string
+    type: number
     sql: ${TABLE}.hear_rate ;;
   }
 
@@ -104,98 +103,112 @@ view: fitbit_metrics2 {
     sql: ${TABLE}.id_number_persona ;;
   }
 
+  # A measure is a field that uses a SQL aggregate function. Here are defined sum and average
+  # measures for this dimension, but you can also add measures of many different aggregates.
+  # Click on the type parameter to see all the options in the Quick Help panel on the right.
+
+  measure: total_id_number_persona {
+    type: sum
+    sql: ${id_number_persona} ;;
+  }
+
+  measure: average_id_number_persona {
+    type: average
+    sql: ${id_number_persona} ;;
+  }
+
   dimension: id_persona {
-    type: string
+    type: number
     sql: ${TABLE}.id_persona ;;
   }
 
   dimension: intensity_karvonen {
-    type: string
+    type: number
     sql: ${TABLE}.intensity_karvonen ;;
   }
 
   dimension: minutes_asleep_ds2 {
-    type: string
+    type: number
     sql: ${TABLE}.Minutes_AsleepDS2 ;;
   }
 
   dimension: minutes_awake_ds2 {
-    type: string
+    type: number
     sql: ${TABLE}.Minutes_AwakeDS2 ;;
   }
 
   dimension: minutes_deep_sleep_ds2 {
-    type: string
+    type: number
     sql: ${TABLE}.Minutes_Deep_SleepDS2 ;;
   }
 
   dimension: minutes_fairly_active_ds2 {
-    type: string
+    type: number
     sql: ${TABLE}.Minutes_Fairly_ActiveDS2 ;;
   }
 
   dimension: minutes_light_sleep_ds2 {
-    type: string
+    type: number
     sql: ${TABLE}.Minutes_Light_SleepDS2 ;;
   }
 
   dimension: minutes_lightly_active_ds2 {
-    type: string
+    type: number
     sql: ${TABLE}.Minutes_Lightly_ActiveDS2 ;;
   }
 
   dimension: minutes_rem_sleep_ds2 {
-    type: string
+    type: number
     sql: ${TABLE}.Minutes_REM_SleepDS2 ;;
   }
 
   dimension: minutes_sedentary_ds2 {
-    type: string
+    type: number
     sql: ${TABLE}.Minutes_SedentaryDS2 ;;
   }
 
   dimension: minutes_very_active_ds2 {
-    type: string
+    type: number
     sql: ${TABLE}.Minutes_Very_ActiveDS2 ;;
   }
 
   dimension: month_exer {
-    type: string
+    type: number
     sql: ${TABLE}.month_exer ;;
   }
 
   dimension: norm_heart {
-    type: string
+    type: number
     sql: ${TABLE}.norm_heart ;;
   }
 
   dimension: number_of_awakenings_ds2 {
-    type: string
+    type: number
     sql: ${TABLE}.Number_of_AwakeningsDS2 ;;
   }
 
   dimension: resting_heart {
-    type: string
+    type: number
     sql: ${TABLE}.resting_heart ;;
   }
 
   dimension: sd_norm_heart {
-    type: string
+    type: number
     sql: ${TABLE}.sd_norm_heart ;;
   }
 
   dimension: steps {
-    type: string
+    type: number
     sql: ${TABLE}.steps ;;
   }
 
   dimension: steps_ds2 {
-    type: string
+    type: number
     sql: ${TABLE}.StepsDS2 ;;
   }
 
   dimension: steps_times_distance {
-    type: string
+    type: number
     sql: ${TABLE}.steps_times_distance ;;
   }
 
@@ -210,12 +223,12 @@ view: fitbit_metrics2 {
   }
 
   dimension: x1 {
-    type: string
+    type: number
     sql: ${TABLE}.X1 ;;
   }
 
   dimension: year_exer {
-    type: string
+    type: number
     sql: ${TABLE}.year_exer ;;
   }
 

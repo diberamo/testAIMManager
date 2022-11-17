@@ -234,7 +234,7 @@ view: fitbit_metrics {
 
   dimension: height_div {
     type: number
-    sql:  ${fitbit_metrics.height}/100);;
+    sql:  (${fitbit_metrics.height}/100);;
   }
 
   dimension: imc_num {

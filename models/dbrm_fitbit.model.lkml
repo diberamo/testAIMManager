@@ -26,3 +26,4 @@ persist_with: dbrm_fitbit_default_datagroup
 # Each joined view also needs to define a primary key.
 
 explore: fitbit_metrics {}
+explore: sql_runner_query {}

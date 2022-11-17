@@ -247,6 +247,11 @@ view: fitbit_metrics {
     sql:  if(${imc_num}>18.5 and ${imc_num}<24.9,"Peso Saludable", if(${imc_num}<18.5,"Bajo Peso",if(${imc_num}>25.0 AND ${imc_num}<29.9,"Sobrepeso","Obesidad")));;
   }
 
+  dimension: gender_string {
+    type: string
+    sql:  if(${gender}=1,"Mujer","Hombre") ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [id]

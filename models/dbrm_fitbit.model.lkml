@@ -24,6 +24,8 @@ persist_with: dbrm_fitbit_default_datagroup
 # To create more sophisticated Explores that involve multiple views, you can use the join parameter.
 # Typically, join parameters require that you define the join type, join relationship, and a sql_on clause.
 # Each joined view also needs to define a primary key.
+# Each joined view also needs to define a primary key.
+
 
 explore: fitbit_metrics {}
 explore: sql_runner_query {}

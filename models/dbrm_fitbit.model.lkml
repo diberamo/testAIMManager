@@ -29,4 +29,3 @@ persist_with: dbrm_fitbit_default_datagroup
 
 explore: fitbit_metrics {}
 explore: sql_runner_query {}
-explore: fitness_trends {}

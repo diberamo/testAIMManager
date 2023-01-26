@@ -54,7 +54,7 @@ view: fitbit_metrics {
   }
 
   dimension: date_exer_mod {
-    type: date_time
+    type: date
     sql: ${TABLE}.date_exer ;;
   }
   dimension: day_exer {

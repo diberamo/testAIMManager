@@ -53,6 +53,10 @@ view: fitbit_metrics {
     sql: ${TABLE}.date_exer ;;
   }
 
+  dimension: date_exer_mod {
+    type: date_time
+    sql: ${TABLE}.date_exer ;;
+  }
   dimension: day_exer {
     type: number
     sql: ${TABLE}.day_exer ;;

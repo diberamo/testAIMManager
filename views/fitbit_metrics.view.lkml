@@ -56,7 +56,7 @@ view: fitbit_metrics {
 
   dimension: anio_calculado {
     type: number
-    sql:substring(${TABLE}.day_exer,position(${TABLE}.day_exer,"/") +3 , length(${TABLE}.day_exer)) ;;
+    sql:split(fitbit_metrics.date_exer,"/")[offset(2)]   ;;
   }
 
   dimension: device {

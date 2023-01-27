@@ -54,9 +54,9 @@ view: fitbit_metrics {
   }
 
 
-  dimension: day_exer {
+  dimension: anio_calculado {
     type: number
-    sql: ${TABLE}.day_exer ;;
+    sql:substring(${TABLE}.day_exer,position(${TABLE}.day_exer,"/") +3 , length(${TABLE}.day_exer)) ;;
   }
 
   dimension: device {

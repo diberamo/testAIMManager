@@ -1,13 +1,15 @@
 view: sql_runner_query_split {
   derived_table: {
-    sql: select fitbit_metrics_date_exer, fitbit_metrics_anio_calculado, fitbit_metrics_dia_calculado,
-      fitbit_metrics_mes_calculado,
-       fitbit_metrics_activity,
-         fitbit_metrics_calories,
-          fitbit_metrics_distance,
-           fitbit_metrics_gender,
-          fitbit_metrics_id,
-          fitbit_metrics_id_persona
+    sql: select fitbit_metrics_date_exer,
+          fitbit_metrics_mes_calculado,
+          fitbit_metrics_anio_calculado,
+          fitbit_metrics_dia_calculado,
+          fitbit_metrics_activity,
+               fitbit_metrics_calories,
+                fitbit_metrics_distance,
+                 fitbit_metrics_gender,
+                fitbit_metrics_id
+
 
       from (
       SELECT
@@ -26,7 +28,7 @@ view: sql_runner_query_split {
 
       ) as t
 
-      limit 500
+      limit 100
       ;;
   }
 
@@ -48,11 +50,6 @@ view: sql_runner_query_split {
   dimension: fitbit_metrics_dia_calculado {
     type: string
     sql: ${TABLE}.fitbit_metrics_dia_calculado ;;
-  }
-
-  dimension: fitbit_metrics_mes_calculado {
-    type: string
-    sql: ${TABLE}.fitbit_metrics_mes_calculado ;;
   }
 
   dimension: fitbit_metrics_activity {
@@ -85,12 +82,17 @@ view: sql_runner_query_split {
     sql: ${TABLE}.fitbit_metrics_id_persona ;;
   }
 
+  dimension: fitbit_metrics_mes_calculado {
+    type: number
+    sql: ${TABLE}.fitbit_metrics_mes_calculado ;;
+  }
+
   set: detail {
     fields: [
       fitbit_metrics_date_exer,
       fitbit_metrics_anio_calculado,
-      fitbit_metrics_dia_calculado,
       fitbit_metrics_mes_calculado,
+      fitbit_metrics_dia_calculado,
       fitbit_metrics_activity,
       fitbit_metrics_calories,
       fitbit_metrics_distance,

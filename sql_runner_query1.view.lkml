@@ -1,4 +1,4 @@
-view: sql_runner_query_split {
+view: sql_runner_query1 {
   derived_table: {
     sql: select fitbit_metrics_date_exer, fitbit_metrics_anio_calculado, fitbit_metrics_dia_calculado,
       fitbit_metrics_mes_calculado,

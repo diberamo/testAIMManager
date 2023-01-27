@@ -53,9 +53,11 @@ view: fitbit_metrics {
     sql: ${TABLE}.date_exer ;;
   }
 
-  dimension: date_exer_mod {
+  dimension: date_month1 {
     type: string
-    sql: ${TABLE}.date_exer ;;
+    sql: if(
+length(substring(${TABLE}.date_exer,0,position(${TABLE}.date_exer,"/") -1 ))<2, concat(0,substring(${TABLE}.date_exer,0,position(${TABLE}.date_exer,"/") -1 )),substring(${TABLE}.date_exer,0,position(${TABLE}.date_exer,"/") -1 )
+) ;;
   }
   dimension: day_exer {
     type: number

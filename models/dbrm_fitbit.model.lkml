@@ -14,6 +14,8 @@ datagroup: dbrm_fitbit_default_datagroup {
 
 persist_with: dbrm_fitbit_default_datagroup
 
+include: "/lookml_dash/*.dashboard.lookml"
+
 # Explores allow you to join together different views (database tables) based on the
 # relationships between fields. By joining a view into an Explore, you make those
 # fields available to users for data analysis.

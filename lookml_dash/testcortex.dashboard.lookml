@@ -7,9 +7,6 @@
   filters:
 
   elements:
-    - name: hello_world
-      type: looker_column
-
     - name: add_a_unique_name_1681829365
       title: Untitled Visualization
       model: dbrm_fitbit

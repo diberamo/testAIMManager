@@ -34,3 +34,4 @@ explore: sql_runner_query {}
 explore: fitness_trends {}
 explore: sql_runner_query_split {}
 explore: ivan {}
+explore: sql_runner_query_test {}

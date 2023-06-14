@@ -29,19 +29,19 @@ include: "/lookml_dash/*.dashboard.lookml"
 # Each joined view also needs to define a primary key.
 
 
-#explore: fitbit_metrics {}
-#explore: sql_runner_query {}
-#explore: fitness_trends {}
-#explore: sql_runner_query_split {}
-#explore: ivan {}
+explore: fitbit_metrics {}
+explore: sql_runner_query {}
+explore: fitness_trends {}
+explore: sql_runner_query_split {}
+explore: ivan {}
 
 
-explore: fitbit_metrics {
+#explore: fitbit_metrics {
 
-  join: sql_runner_query_test {
-    type: left_outer
-    sql_on: ${fitbit_metrics.id} = ${fitbit_metrics.id} ;;
-    relationship: many_to_one
+  #join: sql_runner_query_test {
+    #type: left_outer
+    #sql_on: ${fitbit_metrics.id} = ${fitbit_metrics.id} ;;
+    #relationship: many_to_one
 
-  }
-}
+  #}
+#}

@@ -33,7 +33,7 @@ explore: fitbit_metrics {}
 explore: sql_runner_query {}
 explore: fitness_trends {}
 explore: sql_runner_query_split {}
-explore: ivan {}
+#explore: ivan {}
 
 
 #explore: fitbit_metrics {

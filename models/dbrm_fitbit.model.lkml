@@ -35,7 +35,7 @@ explore: fitness_trends {}
 explore: sql_runner_query_split {}
 explore: ivan {}
 
-
+#este cambio es el último al revertir no debería aparecer
 #explore: fitbit_metrics {
 
   #join: sql_runner_query_test {

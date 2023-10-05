@@ -11,7 +11,7 @@ project_name: "dbrm_fitbit2"
 
 
 application: looker-gen-ai-ver-diana{
-  label: "Looker GenAI Extension"
+  label: "Looker GenAI Extension DBRM"
   # for development: url: "https://localhost:8080/bundle.js"
   # production
   file: "bundle_diana.js"

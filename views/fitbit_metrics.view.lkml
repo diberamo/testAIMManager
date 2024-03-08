@@ -65,6 +65,11 @@ view: fitbit_metrics {
     sql: ${TABLE}.device ;;
   }
 
+  dimension: prueba_camila {
+    type: string
+    sql:  concat(${device},${age},${calories});;
+  }
+
   dimension: distance {
     type: number
     sql: ${TABLE}.distance ;;

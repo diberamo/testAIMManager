@@ -87,6 +87,14 @@ view: sql_runner_query_split {
     sql: ${TABLE}.fitbit_metrics_mes_calculado ;;
   }
 
+  measure: test {
+    type: average
+    sql: ${fitbit_metrics_distance} ;;
+  }
+
+
+
+
   set: detail {
     fields: [
       fitbit_metrics_date_exer,

@@ -70,6 +70,7 @@ view: fitbit_metrics {
     sql:  concat(${device},${age},${calories});;
   }
 
+
   dimension: distance {
     type: number
     sql: ${TABLE}.distance ;;
@@ -93,6 +94,12 @@ view: fitbit_metrics {
   dimension: gender {
     type: number
     sql: ${TABLE}.gender ;;
+    link: {
+      label: "eCommerce Dashboard"
+      #url: "https://cloudcelatam.cloud.looker.com/dashboards/71?Gender={{ _filters['fitbit_metrics.gender'] | url_encode}}"
+      url: "https://cloudcelatam.cloud.looker.com/dashboards/71?Gender={{ fitbit_metrics.gender }}"
+      icon_url: "https://looker.com/favicon.ico"
+    }
   }
 
   dimension: hear_rate {
@@ -254,13 +261,52 @@ view: fitbit_metrics {
     sql:  if(${imc_num}>18.5 and ${imc_num}<24.9,"Peso Saludable", if(${imc_num}<18.5,"Bajo Peso",if(${imc_num}>25.0 AND ${imc_num}<29.9,"Sobrepeso","Obesidad")));;
   }
 
+
   dimension: gender_string {
     type: string
     sql:  if(${gender}=1,"Mujer","Hombre") ;;
+
+    link: {
+      label: "eCommerce Dashboard"
+      #url: "https://cloudcelatam.cloud.looker.com/dashboards/71?Gender={{ _filters['fitbit_metrics.gender'] | url_encode}}"
+      url: "https://cloudcelatam.cloud.looker.com/dashboards/71?Gender+String={{ fitbit_metrics.gender_string }}"
+      icon_url: "https://looker.com/favicon.ico"
+    }
+
   }
+
+
+  dimension: state_flag_image {
+    type: string
+    sql: ${gender_string} ;;
+    html:
+
+              <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg" height="80" width="80">
+           ;;
+  }
+
+  dimension: campo_prueba {
+    type: string
+    sql: ${gender_string};;
+    html: <img src=”https://drive.google.com/file/d/1rJgw-MBiCCY2UQEx-2koD4EAE5Zr5bms/view?usp=drive_link&resourcekey=0-xQju3T9W0ei6yqmVINl_OQ” height="150" width="150" />;;
+  }
+
 
   measure: count {
     type: count
     drill_fields: [id]
+    html:
+    <div style="border-radius: 70px; background-color: #d3363d; color: #fff;">
+    <div style="display: inline-block;">
+    <p style="font-size: 1.5rem;"><strong>Your latest rebate status</strong></p>
+    </div>
+    </div> ;;
+
+  }
+
+  measure: count2 {
+    type: count
+    drill_fields: [id]
+
   }
 }

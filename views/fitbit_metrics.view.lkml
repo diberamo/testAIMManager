@@ -298,7 +298,7 @@ view: fitbit_metrics {
     html:
     <div style="border-radius: 70px; background-color: #d3363d; color: #fff;">
     <div style="display: inline-block;">
-    <p style="font-size: 1.5rem;"><strong>Your latest rebate status</strong></p>
+    <p style="font-size: 1.5rem;"><strong>count</strong></p>
     </div>
     </div> ;;
 
